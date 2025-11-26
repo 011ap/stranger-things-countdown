@@ -93,69 +93,6 @@ Place your image/gif in `assets/banner.gif` (or `assets/banner.jpg`) and the top
 </p>
 ```
 
-2) Video banner (best on the Pages site)
-
-GitHub README may not autoplay video reliably. For a full-screen video banner, add `assets/banner.mp4` and a poster `assets/poster.jpg`, then the video will work when served by GitHub Pages (your live site). Use this HTML snippet on a page served by Pages (e.g., a custom `index.html` or the hosted site):
-
-```html
-<p align="center">
-  <video autoplay loop muted playsinline width="980" poster="assets/poster.jpg">
-    <source src="assets/banner.mp4" type="video/mp4" />
-  </video>
-</p>
-```
-
-To add your files locally:
-
-```bash
-# create the assets folder (if missing)
-mkdir -p assets
-# copy your files into `assets/` and commit
-git add assets/banner.mp4 assets/poster.jpg
-git commit -m "Add banner video and poster"
-git push origin main
-```
-
-When the workflow runs and Pages deploys, visit your Pages URL to see the video banner.
-
----
-
-## Assets added to this repo
-
-I found the picture and video you added in the `assets/` folder and wired them into the project:
-
-- Poster image: `assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png`
-- Video (hero): `assets/hero.mp4`
-
-If you prefer the old filename to remain, it's still present until you push — but I've renamed it locally to `assets/hero.mp4` for convenience and updated the site to use it.
-
----
-
-## Adding the official Netflix logo
-
-If you want the exact official Netflix logo displayed, download a clean SVG or PNG and place it at `assets/netflix-logo.svg` (or `.png`). Here are two ways to add it:
-
-1) Quick curl (run locally on your machine):
-
-```bash
-# Example — replace the URL with the official asset URL you trust
-curl -L -o assets/netflix-logo.svg "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/netflix.svg"
-```
-
-2) Manually download and copy into the `assets/` folder using GitHub UI or your file manager.
-
-After adding the file, commit and push:
-
-```bash
-git add assets/netflix-logo.svg
-git commit -m "Add official Netflix logo"
-git push origin main
-```
-
-The site is already wired to use `assets/netflix-logo.svg` in the header; once the file is present the logo will appear in the hero area and the README preview.
-
-Preview (poster image shown here; animated SVG fallback below; video plays on the deployed Pages site):
-
 <p align="center">
   <a href="https://011ap.github.io/stranger-things-countdown/" target="_blank">
     <img src="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png" alt="Poster" width="520" style="max-width:100%;height:auto;" />
