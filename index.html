@@ -155,17 +155,19 @@
         .countdown {
   display: flex;
   justify-content: center;
-  gap: 18px;
+  gap: 12px;
   margin: 42px 0 32px 0;
-  flex-wrap: wrap;
+  /* Try to keep all boxes on one line on larger screens */
+  flex-wrap: nowrap;
+  align-items: stretch;
 }
 
         .countdown-item {
   background-color: var(--dark-box);
   border: 1.5px solid var(--border-gray);
   border-radius: 12px;
-  padding: 20px 26px 15px 26px;
-  min-width: 92px;
+  padding: 12px 16px 10px 16px;
+  min-width: 66px; /* reduced width so four items fit on one line */
   box-sizing: border-box;
   box-shadow: none;
   display: flex;
@@ -182,14 +184,14 @@
         
 
         .countdown-value {
-  font-size: clamp(33px, 6vw, 54px);
+  font-size: clamp(26px, 4.6vw, 40px); /* smaller so values fit */
   font-weight: 700;
   font-family: 'Fraunces', serif;
   color: var(--white-text);
   display: block;
   margin-bottom: 1px;
-  letter-spacing: 0.06em;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.09), 0 0 8px rgba(229,9,20,0.07);
+  letter-spacing: 0.04em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.09), 0 0 6px rgba(229,9,20,0.06);
 }
 
 .countdown-item:hover .countdown-value {
@@ -198,12 +200,19 @@
 }
 
         .countdown-label {
-  font-size: 13px;
+  font-size: 12px;
   color: var(--gray-label);
   text-transform: uppercase;
-  letter-spacing: 0.10em;
+  letter-spacing: 0.08em;
   font-weight: 600;
-  margin-top: 3px;
+  margin-top: 4px;
+}
+
+/* Allow wrapping on small screens so boxes don't overflow */
+@media (max-width: 520px) {
+  .countdown { flex-wrap: wrap; gap: 10px; }
+  .countdown-item { min-width: 84px; padding: 10px 12px; }
+  .countdown-value { font-size: clamp(22px, 7vw, 34px); }
 }
 
         .finished-message {
