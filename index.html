@@ -417,23 +417,23 @@
         <div class="release-info">Releases November 27, 2025 • 6:30 AM IST</div>
         <div class="netflix-label">NOW STREAMING ON</div>
         <div class="logo-netflix">
-  <!-- 3D Netflix N built with SVG and CSS -->
+  <!-- Simplified stylized 'N' for consistent rendering -->
   <svg viewBox="0 0 120 166" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display:block">
-    <!-- Black shadow base / depth */-->
-    <polygon points="63,13 107,166 95,166 52,31 12,166 7,166 54,13" fill="#000" filter="url(#shadow)" />
-    <!-- Middle ribbon -->
-    <polygon points="63,13 54,36 54,133 63,153 63,13" fill="#A20711" />
-    <!-- Left face -->
-    <polygon points="54,13 54,133 12,166 54,13" fill="#E50914"/>
-    <!-- Right face (shadow) -->
-    <polygon points="63,13 107,166 63,153 63,13" fill="#B8060B" />
-    <!-- Top bar highlight -->
-    <polygon points="54,13 63,13 63,23 54,22" fill="#FFF" opacity="0.11"/>
     <defs>
-      <filter id="shadow" x="-6" y="-6" width="138%" height="120%">
-        <feDropShadow dx="0" dy="9" stdDeviation="7" flood-color="#A20711"/>
+      <linearGradient id="ng" x1="0" x2="1">
+        <stop offset="0%" stop-color="#E50914"/>
+        <stop offset="60%" stop-color="#B8060B"/>
+      </linearGradient>
+      <filter id="nshadow" x="-40%" y="-40%" width="200%" height="200%">
+        <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity="0.6"/>
       </filter>
     </defs>
+    <!-- Background shadow to lift the logo -->
+    <path d="M18 12 L38 12 L68 142 L88 142 L58 12 L78 12 L98 12 L78 154 L42 154 Z" fill="#000" opacity="0.18" filter="url(#nshadow)"/>
+    <!-- Main N shape -->
+    <path d="M20 14 L40 14 L70 146 L90 146 L60 14 L80 14 L100 14 L80 156 L44 156 Z" fill="url(#ng)"/>
+    <!-- Thin highlight for depth -->
+    <path d="M36 18 L52 18 L82 140 L96 140 L68 20 L84 20 L96 20" fill="none" stroke="#FF9A9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/>
   </svg>
 </div>
         <div class="finished-message" id="finished">🎉 STRANGER THINGS 5 IS HERE! 🎉</div>
