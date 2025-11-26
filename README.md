@@ -125,14 +125,21 @@ When the workflow runs and Pages deploys, visit your Pages URL to see the video 
 I found the picture and video you added in the `assets/` folder and wired them into the project:
 
 - Poster image: `assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png`
-- Video (hero): `assets/Stranger Things 5  Title Tease  Netflix - Stranger Things (1080p, h264).mp4`
+- Video (hero): `assets/hero.mp4`
 
-Preview (poster image shown here; video plays on the deployed Pages site):
+If you prefer the old filename to remain, it's still present until you push — but I've renamed it locally to `assets/hero.mp4` for convenience and updated the site to use it.
+
+Preview (poster image shown here; animated SVG fallback below; video plays on the deployed Pages site):
 
 <p align="center">
   <a href="https://011ap.github.io/stranger-things-countdown/" target="_blank">
     <img src="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png" alt="Poster" width="980" />
   </a>
+</p>
+
+<!-- Animated SVG fallback shown inline in README; works on GitHub and Pages -->
+<p align="center">
+  <img src="assets/banner-anim.svg" alt="Animated banner" width="980" />
 </p>
 
 Click the image (or visit the Pages URL) to see the full hero video on the live site — GitHub README does not reliably autoplay videos, but the Pages site will.

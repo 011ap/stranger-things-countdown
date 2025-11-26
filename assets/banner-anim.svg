@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#E50914"/>
+      <stop offset="50%" stop-color="#FF6A6A"/>
+      <stop offset="100%" stop-color="#E50914"/>
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="#000" />
+  <g transform="translate(40,40)">
+    <text x="0" y="80" font-family="Impact, Arial, sans-serif" font-size="72" fill="url(#g)" stroke="#E50914" stroke-width="1.5">
+      STRANGER THINGS
+    </text>
+    <text x="0" y="135" font-family="'Fraunces', Georgia, serif" font-size="28" fill="#E50914" opacity="0.95" style="letter-spacing:4px;">
+      COUNTDOWN
+    </text>
+  </g>
+  <g>
+    <rect x="30" y="160" width="940" height="2" fill="#E50914" opacity="0.28" />
+  </g>
+  <g>
+    <circle cx="900" cy="40" r="80" fill="#E50914" opacity="0.06">
+      <animate attributeName="opacity" values="0.06;0.18;0.06" dur="3s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  <g>
+    <g opacity="0.9">
+      <text x="50" y="80" font-family="Impact, Arial, sans-serif" font-size="72" fill="transparent" stroke="#FFF" stroke-width="0.6" opacity="0.02">
+        STRANGER THINGS
+      </text>
+    </g>
+  </g>
+  <!-- flicker animation on the main text -->
+  <animate xlink:href="#" attributeName="opacity" from="1" to="1" dur="1s" />
+</svg>
