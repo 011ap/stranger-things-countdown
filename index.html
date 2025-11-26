@@ -108,6 +108,28 @@
   filter: drop-shadow(0 4px 18px rgba(229, 9, 20, 0.4));
 }
 
+        /* Hide SVG fallback by default; JS shows it only on video error */
+        .fallback-svg {
+          display: none;
+        }
+
+        /* Visible logo at the very bottom of the page */
+        .bottom-logo {
+          display: block;
+          text-align: center;
+          margin: 18px auto 28px auto;
+          pointer-events: none; /* decorative only */
+        }
+        .bottom-logo svg {
+          width: 100%;
+          max-width: 280px;
+          height: auto;
+          filter: drop-shadow(0 4px 18px rgba(229, 9, 20, 0.35));
+        }
+        @media (max-width: 480px) {
+          .bottom-logo svg { max-width: 220px; }
+        }
+
 /* Hero video styling */
 .hero {
   /* full-bleed header that doesn't affect page flow */
@@ -476,6 +498,33 @@
         </div>
                 <img src="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png" alt="Stranger Things Logo" style="max-width: 100px; height: auto; display: block; margin: 20px auto;" />
     </div>
+
+  <!-- Visible decorative SVG at the bottom of the page -->
+  <div class="bottom-logo" aria-hidden="true">
+    <svg viewBox="0 0 470 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg">
+      <!-- Top Line -->
+      <rect x="13" y="29" width="444" height="4" rx="2" fill="#E50914" filter="url(#glow)" />
+      <!-- Bottom Line -->
+      <rect x="13" y="153" width="444" height="4" rx="2" fill="#E50914" filter="url(#glow)" />
+      <!-- STRANGER -->
+      <text x="235" y="82" text-anchor="middle" fill="#E50914" font-family="'Fraunces', serif" font-weight="900" font-size="56" letter-spacing="0.07em" stroke="#E50914" stroke-width="1.5" paint-order="stroke" filter="url(#glow)" style="text-shadow:0 0 16px #E50914,0 0 28px #fff">
+        STRANGER
+      </text>
+      <!-- THINGS -->
+      <text x="235" y="136" text-anchor="middle" fill="#E50914" font-family="'Fraunces', serif" font-weight="900" font-size="52" letter-spacing="0.07em" stroke="#E50914" stroke-width="1.5" paint-order="stroke" filter="url(#glow)" style="text-shadow:0 0 18px #E50914,0 0 28px #fff">
+        THINGS
+      </text>
+      <defs>
+        <filter id="glow" filterUnits="userSpaceOnUse">
+          <feGaussianBlur stdDeviation="3.2" result="coloredBlur" />
+          <feMerge>
+            <feMergeNode in="coloredBlur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+  </div>
 
     <script>
         // Release date: November 27, 2025, 6:30 AM IST
