@@ -158,13 +158,13 @@ Preview (poster image shown here; animated SVG fallback below; video plays on th
 
 <p align="center">
   <a href="https://011ap.github.io/stranger-things-countdown/" target="_blank">
-    <img src="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png" alt="Poster" width="980" />
+    <img src="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png" alt="Poster" width="520" style="max-width:100%;height:auto;" />
   </a>
 </p>
 
 <!-- Animated SVG fallback shown inline in README; works on GitHub and Pages -->
 <p align="center">
-  <img src="assets/banner-anim.svg" alt="Animated banner" width="980" />
+  <img src="assets/banner-anim.svg" alt="Animated banner" width="520" style="max-width:100%;height:auto;" />
 </p>
 
 Click the image (or visit the Pages URL) to see the full hero video on the live site — GitHub README does not reliably autoplay videos, but the Pages site will.
