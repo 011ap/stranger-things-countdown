@@ -240,6 +240,24 @@ https://011ap.github.io/stranger-things-countdown/
 
 Share that link and anyone can view the live countdown.
 
+---
+
+## Troubleshooting: "Permission to ... denied to github-actions[bot]"
+
+If your workflow fails with a message like "Permission to <owner>/<repo>.git denied to github-actions[bot]", it's because the workflow's runner (the GitHub Actions bot) doesn't have permission to push the `gh-pages` branch. Fixes:
+
+1) Allow Actions to write to the repository (recommended):
+
+  - Go to your repo on github.com -> Settings -> Actions -> General
+  - Under "Workflow permissions", select **Read and write permissions** (instead of Read repository contents only)
+  - Click "Save"
+
+2) If you have branch protection rules that prevent the bot from pushing to `gh-pages`, either relax those rules for the `gh-pages` branch or choose the manual Pages source (main branch) in Settings -> Pages.
+
+3) If you prefer using a personal token (works even if repo-level workflow write access is restricted), create a Personal Access Token (classic) with `repo` scopes, then add it as a secret named `GH_PAGES_DEPLOY_TOKEN` in Settings -> Secrets -> Actions. Update `.github/workflows/deploy.yml` to use `token: ${{ secrets.GH_PAGES_DEPLOY_TOKEN }}` instead of `GITHUB_TOKEN`.
+
+After changing the workflow permissions or adding the token, push a small change to `main` to re-run the workflow.
+
 
 **What is a `LICENSE` file and why it matters**
 
