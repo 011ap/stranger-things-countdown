@@ -120,6 +120,23 @@ When the workflow runs and Pages deploys, visit your Pages URL to see the video 
 
 ---
 
+## Assets added to this repo
+
+I found the picture and video you added in the `assets/` folder and wired them into the project:
+
+- Poster image: `assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png`
+- Video (hero): `assets/Stranger Things 5  Title Tease  Netflix - Stranger Things (1080p, h264).mp4`
+
+Preview (poster image shown here; video plays on the deployed Pages site):
+
+<p align="center">
+  <a href="https://011ap.github.io/stranger-things-countdown/" target="_blank">
+    <img src="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png" alt="Poster" width="980" />
+  </a>
+</p>
+
+Click the image (or visit the Pages URL) to see the full hero video on the live site — GitHub README does not reliably autoplay videos, but the Pages site will.
+
 ---
 
 ## Project structure

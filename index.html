@@ -95,6 +95,18 @@
   filter: drop-shadow(0 4px 18px rgba(229, 9, 20, 0.4));
 }
 
+/* Hero video styling */
+.hero-video {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  display: block;
+  margin: 0 auto 14px auto;
+  border-radius: 10px;
+  box-shadow: 0 6px 30px rgba(229,9,20,0.12);
+  background: #000;
+}
+
         .subtitle {
   font-size: clamp(16px,3vw,21px);
   color: var(--gray-label);
@@ -338,8 +350,14 @@
 <body>
     <div class="container" id="container">
         <div class="logo-stranger-things">
-  <!-- Decorative lines and neon SVG text -->
-  <svg viewBox="0 0 470 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display:block">
+  <!-- Hero video (will autoplay on Pages). Poster fallback uses the uploaded PNG. -->
+  <video id="heroVideo" class="hero-video" autoplay loop muted playsinline poster="assets/Stranger_Things_neon_red_logo_in_retro_ITC_Benguiat_style.png">
+    <source id="heroSource" src="" type="video/mp4">
+    <!-- Fallback SVG below will be hidden if video plays -->
+  </video>
+
+  <!-- Decorative SVG fallback (keeps README/HTML looking good if video doesn't load) -->
+  <svg class="fallback-svg" viewBox="0 0 470 180" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display:block; margin-top:6px;">
     <!-- Top Line -->
     <rect x="13" y="29" width="444" height="4" rx="2" fill="#E50914" filter="url(#glow)" />
     <!-- Bottom Line -->
@@ -470,6 +488,27 @@
         // Update countdown every second
         updateCountdown();
         setInterval(updateCountdown, 1000);
+
+        // Hero video: set the source using encodeURI (handles spaces/special chars)
+        (function() {
+          const heroSource = document.getElementById('heroSource');
+          const heroVideo = document.getElementById('heroVideo');
+          const fallbackSvg = document.querySelector('.fallback-svg');
+          if (heroSource && heroVideo) {
+            // NOTE: filename includes spaces and punctuation; encodeURI ensures the browser resolves it
+            heroSource.src = encodeURI('assets/Stranger Things 5  Title Tease  Netflix - Stranger Things (1080p, h264).mp4');
+            heroVideo.load();
+            heroVideo.addEventListener('canplay', function() {
+              if (fallbackSvg) fallbackSvg.style.display = 'none';
+              heroVideo.style.display = 'block';
+            });
+            heroVideo.addEventListener('error', function() {
+              // If video fails, hide it so fallback SVG remains visible
+              heroVideo.style.display = 'none';
+              if (fallbackSvg) fallbackSvg.style.display = 'block';
+            });
+          }
+        })();
     </script>
 </body>
 </html>
