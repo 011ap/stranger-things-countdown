@@ -66,7 +66,7 @@
 
 .logo-netflix {
   width: 100%;
-  max-width: 280px;
+  max-width: 160px;
   height: auto;
   margin: 0 auto 28px auto;
   display: block;
@@ -75,9 +75,21 @@
 }
 
 .logo-netflix:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 4px 16px rgba(229, 9, 20, 0.35));
+  transform: translateY(-6px) scale(1.04);
+  filter: drop-shadow(0 8px 30px rgba(229, 9, 20, 0.45));
 }
+
+/* Image-based Netflix logo styling */
+.logo-netflix .netflix-img {
+  display: block;
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  margin: 0 auto;
+  filter: drop-shadow(0 6px 28px rgba(229,9,20,0.28));
+  transition: transform 0.28s ease, filter 0.28s ease, opacity 0.28s ease;
+}
+.logo-netflix:hover .netflix-img { transform: translateY(-6px) scale(1.06); opacity: 0.98; }
 
         .logo-stranger-things {
   width: 100%;
@@ -417,24 +429,10 @@
         <div class="release-info">Releases November 27, 2025 • 6:30 AM IST</div>
         <div class="netflix-label">NOW STREAMING ON</div>
         <div class="logo-netflix">
-  <!-- Simplified stylized 'N' for consistent rendering -->
-  <svg viewBox="0 0 120 166" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg" style="display:block">
-    <defs>
-      <linearGradient id="ng" x1="0" x2="1">
-        <stop offset="0%" stop-color="#E50914"/>
-        <stop offset="60%" stop-color="#B8060B"/>
-      </linearGradient>
-      <filter id="nshadow" x="-40%" y="-40%" width="200%" height="200%">
-        <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity="0.6"/>
-      </filter>
-    </defs>
-    <!-- Background shadow to lift the logo -->
-    <path d="M18 12 L38 12 L68 142 L88 142 L58 12 L78 12 L98 12 L78 154 L42 154 Z" fill="#000" opacity="0.18" filter="url(#nshadow)"/>
-    <!-- Main N shape -->
-    <path d="M20 14 L40 14 L70 146 L90 146 L60 14 L80 14 L100 14 L80 156 L44 156 Z" fill="url(#ng)"/>
-    <!-- Thin highlight for depth -->
-    <path d="M36 18 L52 18 L82 140 L96 140 L68 20 L84 20 L96 20" fill="none" stroke="#FF9A9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.28"/>
-  </svg>
+  <!-- Replace this file with the official Netflix logo at assets/netflix-logo.svg for exact fidelity -->
+  <a href="https://www.netflix.com" target="_blank" aria-label="Netflix">
+    <img src="assets/netflix-logo.svg" alt="Netflix" class="netflix-img" />
+  </a>
 </div>
         <div class="finished-message" id="finished">🎉 STRANGER THINGS 5 IS HERE! 🎉</div>
         

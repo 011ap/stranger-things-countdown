@@ -129,6 +129,31 @@ I found the picture and video you added in the `assets/` folder and wired them i
 
 If you prefer the old filename to remain, it's still present until you push — but I've renamed it locally to `assets/hero.mp4` for convenience and updated the site to use it.
 
+---
+
+## Adding the official Netflix logo
+
+If you want the exact official Netflix logo displayed, download a clean SVG or PNG and place it at `assets/netflix-logo.svg` (or `.png`). Here are two ways to add it:
+
+1) Quick curl (run locally on your machine):
+
+```bash
+# Example — replace the URL with the official asset URL you trust
+curl -L -o assets/netflix-logo.svg "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/netflix.svg"
+```
+
+2) Manually download and copy into the `assets/` folder using GitHub UI or your file manager.
+
+After adding the file, commit and push:
+
+```bash
+git add assets/netflix-logo.svg
+git commit -m "Add official Netflix logo"
+git push origin main
+```
+
+The site is already wired to use `assets/netflix-logo.svg` in the header; once the file is present the logo will appear in the hero area and the README preview.
+
 Preview (poster image shown here; animated SVG fallback below; video plays on the deployed Pages site):
 
 <p align="center">
