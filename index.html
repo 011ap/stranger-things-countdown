@@ -467,7 +467,7 @@
     <img src="assets/netflix-logo.svg" alt="Netflix" class="netflix-img" />
   </a>
 </div>
-        <div class="finished-message" id="finished">🎉 STRANGER THINGS 5 IS HERE! 🎉</div>
+        <div class="finished-message" id="finished">Eleven here to save the day🖐🏻😠🩸| STRANGER THINGS 5 released!</div>
         
         <div class="buttons">
             <a href="https://www.netflix.com/title/80057281" target="_blank" class="btn btn-netflix">🎬 Watch on Netflix</a>
@@ -522,19 +522,26 @@
             const now = new Date().getTime();
             const distance = releaseDate - now;
             
-            if (distance < 0) {
-                // Countdown finished
-                countdownEl.style.display = 'none';
+            // Calculate absolute values and sign
+            const absDist = Math.abs(distance);
+            const isNegative = distance < 0;
+            
+            const days = Math.floor(absDist / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((absDist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((absDist % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((absDist % (1000 * 60)) / 1000);
+            
+            // Show finished message when launched
+            if (isNegative && countdownEl.style.display !== 'none') {
                 finishedEl.style.display = 'block';
-                return;
+            } else if (!isNegative && finishedEl.style.display === 'block') {
+                finishedEl.style.display = 'none';
+                countdownEl.style.display = 'flex';
             }
             
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            daysEl.textContent = String(days).padStart(2, '0');
+            // Add minus sign if after release
+            const sign = isNegative ? '-' : '';
+            daysEl.textContent = sign + String(days).padStart(2, '0');
             hoursEl.textContent = String(hours).padStart(2, '0');
             minutesEl.textContent = String(minutes).padStart(2, '0');
             secondsEl.textContent = String(seconds).padStart(2, '0');
