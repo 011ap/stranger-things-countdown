@@ -83,6 +83,3 @@ https://011ap.github.io/stranger-things-countdown/
 Share that link and anyone can view the live countdown.
 
 ---
-
-If you want, I can add an `LICENSE` file with the MIT text for you.
----
